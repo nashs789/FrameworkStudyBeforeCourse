@@ -1,10 +1,7 @@
 package hanghae.study.frameworkstudybeforecourse.entity;
 
 import hanghae.study.frameworkstudybeforecourse.enums.Grade;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @ToString
@@ -20,8 +17,11 @@ public class Member extends Timestamp{
     private Long id;
 
     @Column(nullable = false)
-    private String pw;
+    private String userName;
 
     @Column(nullable = false)
+    private String pw;
+
+    @Enumerated(EnumType.STRING)
     private Grade grade;
 }
